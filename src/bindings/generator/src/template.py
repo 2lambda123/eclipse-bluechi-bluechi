@@ -86,5 +86,5 @@ def model_to_data_dict(interfaces: List[Interface]) -> Dict[str, Any]:
 
 
 def render(template: str, template_dir: str, data: Dict[str, Any]) -> str:
-    tmpl = Environment(loader=FileSystemLoader(template_dir)).get_template(template)
+    tmpl = Environment(loader=FileSystemLoader(template_dir), autoescape=True).get_template(template)
     return tmpl.render(data)
